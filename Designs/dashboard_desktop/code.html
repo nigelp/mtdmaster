@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Freelancer Tax Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-fixed-dim": "#d5d4d9",
+                        "primary-dim": "#004faa",
+                        "surface-container-high": "#e4e8f3",
+                        "surface-tint": "#005bc1",
+                        "on-background": "#2c333d",
+                        "error-container": "#fe8983",
+                        "surface-variant": "#dce3f0",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#fff8ef",
+                        "primary-fixed-dim": "#c2d4ff",
+                        "on-tertiary-fixed": "#413200",
+                        "surface": "#f9f9fe",
+                        "secondary-container": "#e3e2e7",
+                        "secondary-dim": "#525357",
+                        "error": "#9f403d",
+                        "surface-dim": "#d3dae9",
+                        "primary-container": "#d8e2ff",
+                        "outline-variant": "#acb2bf",
+                        "tertiary-fixed-dim": "#e6c047",
+                        "on-tertiary-container": "#584500",
+                        "on-primary-container": "#004ea8",
+                        "tertiary-fixed": "#f5ce53",
+                        "on-secondary-fixed": "#3e3f43",
+                        "background": "#f9f9fe",
+                        "tertiary-dim": "#665100",
+                        "surface-container-low": "#f2f3fa",
+                        "primary": "#005bc1",
+                        "on-secondary-fixed-variant": "#5b5b60",
+                        "on-surface": "#2c333d",
+                        "on-tertiary-fixed-variant": "#634e00",
+                        "surface-bright": "#f9f9fe",
+                        "surface-container": "#ebeef7",
+                        "error-dim": "#4e0309",
+                        "on-error-container": "#752121",
+                        "inverse-on-surface": "#9c9da1",
+                        "tertiary": "#745c00",
+                        "tertiary-container": "#f5ce53",
+                        "secondary": "#5e5f63",
+                        "on-secondary-container": "#515156",
+                        "on-primary-fixed": "#003d85",
+                        "surface-container-highest": "#dce3f0",
+                        "on-secondary": "#f9f8fe",
+                        "on-primary": "#f7f7ff",
+                        "primary-fixed": "#d8e2ff",
+                        "inverse-surface": "#0c0e12",
+                        "inverse-primary": "#4b8eff",
+                        "outline": "#747b86",
+                        "on-surface-variant": "#595f6a",
+                        "on-primary-fixed-variant": "#0058bb",
+                        "secondary-fixed": "#e3e2e7",
+                        "on-error": "#fff7f6"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full flex flex-col py-8 bg-[#f2f3fa] dark:bg-slate-900 w-64 border-r-0 z-50">
+<div class="px-6 mb-10">
+<h1 class="text-xl font-bold text-[#2c333d] dark:text-slate-100 font-headline">Freelancer Tax</h1>
+<p class="text-[10px] tracking-widest uppercase font-bold text-on-surface-variant/60 mt-1">UK Tax Year 2023/24</p>
+</div>
+<nav class="flex-1 space-y-1 px-2">
+<!-- Dashboard Active -->
+<a class="flex items-center gap-3 px-4 py-3 text-[#007AFF] dark:text-blue-400 font-bold border-r-4 border-[#007AFF] hover:bg-[#ffffff]/50 transition-colors duration-200 scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium tracking-wide font-headline">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#2c333d]/70 dark:text-slate-400 hover:bg-[#ffffff]/50 transition-colors duration-200 scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="text-sm font-medium tracking-wide font-headline">Transactions</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#2c333d]/70 dark:text-slate-400 hover:bg-[#ffffff]/50 transition-colors duration-200 scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">category</span>
+<span class="text-sm font-medium tracking-wide font-headline">Categories</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#2c333d]/70 dark:text-slate-400 hover:bg-[#ffffff]/50 transition-colors duration-200 scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">assessment</span>
+<span class="text-sm font-medium tracking-wide font-headline">Reports</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#2c333d]/70 dark:text-slate-400 hover:bg-[#ffffff]/50 transition-colors duration-200 scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium tracking-wide font-headline">Settings</span>
+</a>
+</nav>
+<div class="px-6 mt-auto">
+<div class="flex items-center gap-3 p-3 rounded-lg bg-white/40">
+<img alt="User Profile" class="w-10 h-10 rounded-full object-cover" data-alt="Close up portrait of a friendly smiling freelancer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArS2AdJoYatC4Z3lMV5LOrNeVMzXDovEofzxjOpLbOPC9gFb6f5gO3PjtGtAifPuUysUu_fKxk-FgZadWXvIe6uwT23pfDmFrHCxZXprn-hgNqKBQFMrVy2c2BxU6gaQDjL0OlOx_aATSY4FXQbfrQQ7qgG1LZA0Qm8VlmR_HTlhv_uoQhK1kgC7ZU_PbMduINfM6hCmaTqAErETipu2kXNkmto3lCBDMhw78_ITKPF5gKVV_S95S-kI9Ng1adljHDnVo_TTxrT5GF"/>
+<div class="overflow-hidden">
+<p class="text-xs font-bold truncate">Alex Chen</p>
+<p class="text-[10px] text-on-surface-variant">Free Tier</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="ml-64 min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-8 py-4 sticky top-0 z-40 bg-[#f9f9fe]/80 dark:bg-slate-950/80 backdrop-blur-md">
+<div class="flex items-center gap-4">
+<h2 class="text-lg font-black text-[#2c333d] dark:text-slate-100 font-headline">Dashboard</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-lowest border-none rounded-lg text-sm w-64 focus:ring-2 focus:ring-[#007AFF]/20 transition-all outline-none" placeholder="Search transactions..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity focus:ring-2 focus:ring-[#007AFF]/20 p-1 rounded-full">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity focus:ring-2 focus:ring-[#007AFF]/20 p-1 rounded-full">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Content Shell -->
+<div class="p-10 max-w-6xl mx-auto w-full space-y-12">
+<!-- Welcome Hero Section -->
+<section class="relative overflow-hidden rounded-xl bg-gradient-to-br from-primary to-primary-dim p-12 text-on-primary">
+<div class="relative z-10 max-w-lg">
+<h1 class="text-4xl font-extrabold font-headline leading-tight tracking-tight mb-4">Welcome to MTD Master</h1>
+<p class="text-lg opacity-90 font-medium">Making Tax Digital shouldn't be a headache. We've simplified your UK freelancer finances into easy, bite-sized tasks.</p>
+<div class="mt-8 flex gap-4">
+<button class="bg-surface-container-lowest text-primary px-6 py-3 rounded-lg font-bold text-sm hover:opacity-90 transition-opacity">
+                            View Tax Estimate
+                        </button>
+<button class="bg-primary-dim/30 backdrop-blur-md border border-white/20 px-6 py-3 rounded-lg font-bold text-sm hover:bg-white/10 transition-colors">
+                            How it works
+                        </button>
+</div>
+</div>
+<!-- Abstract Motif from Image 10 vibe -->
+<div class="absolute right-[-10%] top-[-20%] w-[500px] h-[500px] bg-white/10 rounded-full blur-3xl"></div>
+<div class="absolute right-[5%] bottom-[-10%] w-[300px] h-[300px] bg-tertiary/20 rounded-full blur-2xl"></div>
+<div class="absolute right-12 top-1/2 -translate-y-1/2 hidden xl:block">
+<img alt="Financial Motif" class="w-64 h-64 object-contain opacity-40 mix-blend-overlay" data-alt="Abstract blue and gold geometric shapes representing growth" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9MEB_Q4_mKAtKsdcFMCVm4xghBzXz8NCXvKQ06aptzHXCnk4MmwOVAIkj5MaWPdq8LXmi5Qs9CC2mEzJccX5cXka2q3985cOmEEqyYZm5UPbjGJeKVGtl0IzSG4Gcx7ggsEhD4nYKxWIlAN2zARF5aeOt4_ngDkDQe3zGxKsnqFhTdTG_afHZ-yTa1vVgK5Gdr13blANePz6bN_JdNEo2nBD43SvsOvs0txJFmPRyZYe8dWiSLKtSRHGc9ICkZ_syvWfXaLW3lr_L"/>
+</div>
+</section>
+<!-- Bento Grid of Simple Actions -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Getting Started Card -->
+<div class="md:col-span-2 bg-surface-container-lowest rounded-xl p-8 transition-transform hover:scale-[1.01] duration-300">
+<div class="flex justify-between items-center mb-8">
+<div>
+<h3 class="text-xl font-bold font-headline">Getting Started</h3>
+<p class="text-on-surface-variant text-sm mt-1">Complete these 3 steps to be tax-ready.</p>
+</div>
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-primary">
+<span class="font-bold">33%</span>
+</div>
+</div>
+<div class="space-y-4">
+<!-- Step 1 Done -->
+<div class="flex items-center gap-4 p-4 rounded-lg bg-surface-container-low/50 border border-primary/10">
+<div class="w-8 h-8 rounded-full bg-tertiary/20 text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex-1">
+<p class="font-bold text-sm">Connect your bank account</p>
+<p class="text-xs text-on-surface-variant">Securely import your business transactions.</p>
+</div>
+<span class="text-[10px] font-bold text-tertiary uppercase tracking-widest">Done</span>
+</div>
+<!-- Step 2 Pending -->
+<div class="flex items-center gap-4 p-4 rounded-lg bg-surface-container-low group hover:bg-white transition-colors cursor-pointer border border-transparent hover:border-outline-variant/20">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center group-hover:bg-primary-container group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">account_balance_wallet</span>
+</div>
+<div class="flex-1">
+<p class="font-bold text-sm">Categorise your first 5 expenses</p>
+<p class="text-xs text-on-surface-variant">Help us learn what counts as a tax deduction.</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/40 group-hover:text-primary transition-colors">chevron_right</span>
+</div>
+<!-- Step 3 Pending -->
+<div class="flex items-center gap-4 p-4 rounded-lg bg-surface-container-low group hover:bg-white transition-colors cursor-pointer border border-transparent hover:border-outline-variant/20">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center group-hover:bg-primary-container group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">assignment_turned_in</span>
+</div>
+<div class="flex-1">
+<p class="font-bold text-sm">Set your tax goal</p>
+<p class="text-xs text-on-surface-variant">Tell us your expected annual income for better estimates.</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/40 group-hover:text-primary transition-colors">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Simple Status Card -->
+<div class="flex flex-col gap-6">
+<div class="bg-surface-container-lowest rounded-xl p-8 flex-1 relative overflow-hidden group">
+<div class="relative z-10">
+<h4 class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-2">Next Deadline</h4>
+<p class="text-2xl font-black font-headline text-on-surface">31 Jan 2024</p>
+<p class="text-sm text-on-surface-variant mt-2">Self-Assessment Filing</p>
+<div class="mt-6">
+<span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-error-container/20 text-error text-xs font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-pulse"></span>
+                                    Action Required
+                                </span>
+</div>
+</div>
+<div class="absolute bottom-[-20px] right-[-20px] opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-[120px]">calendar_today</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-8 flex-1 relative overflow-hidden group">
+<div class="relative z-10">
+<h4 class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-2">Quick Support</h4>
+<p class="text-sm text-on-surface-variant">Have a question about UK tax rules?</p>
+<button class="mt-4 flex items-center gap-2 text-primary font-bold text-sm group-hover:gap-3 transition-all">
+                                Chat with MTD Assistant
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="absolute bottom-[-10px] right-[-10px] opacity-10">
+<span class="material-symbols-outlined text-[80px] text-primary">forum</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Activity (Non-Expert Style) -->
+<section class="space-y-6">
+<div class="flex justify-between items-end">
+<div>
+<h3 class="text-xl font-bold font-headline">Recent Income</h3>
+<p class="text-on-surface-variant text-sm mt-1">Your latest earnings imported from your accounts.</p>
+</div>
+<button class="text-primary font-bold text-sm px-4 py-2 hover:bg-primary/5 rounded-lg transition-colors">View All</button>
+</div>
+<div class="bg-surface-container-low rounded-xl overflow-hidden">
+<div class="divide-y divide-surface-container-high/50">
+<div class="flex items-center justify-between p-6 bg-surface-container-lowest/40 hover:bg-white transition-colors group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<div>
+<p class="font-bold text-sm">Transfer from Stripe</p>
+<p class="text-xs text-on-surface-variant">24 Oct 2023 • Project Payment</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-black text-on-surface">+£1,450.00</p>
+<p class="text-[10px] text-tertiary font-bold uppercase">Categorised</p>
+</div>
+</div>
+<div class="flex items-center justify-between p-6 bg-surface-container-lowest/40 hover:bg-white transition-colors group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<div>
+<p class="font-bold text-sm">Direct Deposit: Creative Agency</p>
+<p class="text-xs text-on-surface-variant">20 Oct 2023 • Invoice #042</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-black text-on-surface">+£820.00</p>
+<p class="text-[10px] text-on-surface-variant font-bold uppercase">Needs Review</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Contextual FAB - Dashboard Primary Action -->
+<button class="fixed bottom-8 right-8 bg-gradient-to-br from-primary to-primary-dim text-on-primary w-14 h-14 rounded-full shadow-2xl flex items-center justify-center hover:scale-105 active:scale-95 transition-all z-50 group">
+<span class="material-symbols-outlined text-2xl group-hover:rotate-90 transition-transform">add</span>
+</button>
+</body></html>

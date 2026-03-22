@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed-dim": "#d5d4d9",
+              "primary-dim": "#004faa",
+              "surface-container-high": "#e4e8f3",
+              "surface-tint": "#005bc1",
+              "on-background": "#2c333d",
+              "error-container": "#fe8983",
+              "surface-variant": "#dce3f0",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary": "#fff8ef",
+              "primary-fixed-dim": "#c2d4ff",
+              "on-tertiary-fixed": "#413200",
+              "surface": "#f9f9fe",
+              "secondary-container": "#e3e2e7",
+              "secondary-dim": "#525357",
+              "error": "#9f403d",
+              "surface-dim": "#d3dae9",
+              "primary-container": "#d8e2ff",
+              "outline-variant": "#acb2bf",
+              "tertiary-fixed-dim": "#e6c047",
+              "on-tertiary-container": "#584500",
+              "on-primary-container": "#004ea8",
+              "tertiary-fixed": "#f5ce53",
+              "on-secondary-fixed": "#3e3f43",
+              "background": "#f9f9fe",
+              "tertiary-dim": "#665100",
+              "surface-container-low": "#f2f3fa",
+              "primary": "#005bc1",
+              "on-secondary-fixed-variant": "#5b5b60",
+              "on-surface": "#2c333d",
+              "on-tertiary-fixed-variant": "#634e00",
+              "surface-bright": "#f9f9fe",
+              "surface-container": "#ebeef7",
+              "error-dim": "#4e0309",
+              "on-error-container": "#752121",
+              "inverse-on-surface": "#9c9da1",
+              "tertiary": "#745c00",
+              "tertiary-container": "#f5ce53",
+              "secondary": "#5e5f63",
+              "on-secondary-container": "#515156",
+              "on-primary-fixed": "#003d85",
+              "surface-container-highest": "#dce3f0",
+              "on-secondary": "#f9f8fe",
+              "on-primary": "#f7f7ff",
+              "primary-fixed": "#d8e2ff",
+              "inverse-surface": "#0c0e12",
+              "inverse-primary": "#4b8eff",
+              "outline": "#747b86",
+              "on-surface-variant": "#595f6a",
+              "on-primary-fixed-variant": "#0058bb",
+              "secondary-fixed": "#e3e2e7",
+              "on-error": "#fff7f6"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+      .editorial-shadow {
+        box-shadow: 0 10px 40px -10px rgba(44, 51, 61, 0.04);
+      }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface min-h-screen">
+<!-- SideNavBar Shell -->
+<aside class="fixed left-0 top-0 h-full flex flex-col py-8 h-screen w-64 bg-[#f2f3fa] dark:bg-slate-900 z-50">
+<div class="px-8 mb-12">
+<span class="text-xl font-bold text-[#2c333d] dark:text-slate-100 font-headline tracking-tight">Freelancer Tax</span>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-8 py-3 text-[#2c333d]/70 dark:text-slate-400 font-medium hover:bg-[#ffffff]/50 transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined text-lg">dashboard</span>
+<span class="text-sm tracking-wide">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-8 py-3 text-[#2c333d]/70 dark:text-slate-400 font-medium hover:bg-[#ffffff]/50 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-lg">receipt_long</span>
+<span class="text-sm tracking-wide">Transactions</span>
+</a>
+<a class="flex items-center gap-3 px-8 py-3 text-[#2c333d]/70 dark:text-slate-400 font-medium hover:bg-[#ffffff]/50 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-lg">category</span>
+<span class="text-sm tracking-wide">Categories</span>
+</a>
+<a class="flex items-center gap-3 px-8 py-3 text-[#2c333d]/70 dark:text-slate-400 font-medium hover:bg-[#ffffff]/50 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-lg">assessment</span>
+<span class="text-sm tracking-wide">Reports</span>
+</a>
+<!-- Active State: Settings -->
+<a class="flex items-center gap-3 px-8 py-3 text-[#007AFF] dark:text-blue-400 font-bold border-r-4 border-[#007AFF] bg-[#ffffff]/50" href="#">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="text-sm tracking-wide">Settings</span>
+</a>
+</nav>
+<div class="px-8 mt-auto pt-8">
+<div class="flex items-center gap-3 p-3 rounded-xl bg-surface-container-lowest editorial-shadow">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="Professional male user profile portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwGde1b8weXQGZ6y2ikuKiFLYXgMLQh3REHmBT5-Mls9-tLko2cNUMYCkXRKztqPIMRYVleesNMHZ6jDsfKwrQD8RHn3h8Yx_drrTNnitMiuOSfIFndmggeTa0rYMH-hFz47Rc3idVo9f8-tQhKKpvKNajeyrGhrJHkuY9fdaGX1Hiwq9Ev7-6Q8biwmDJ64GZ3meGNF9pJjJn4Fyc2CZZ-d9HiXjFkjMxsF8mrI2GwYdYgNIjZfYi6YKMRj80b6qkK-Vj9Fqonecr"/>
+<div class="flex flex-col">
+<span class="text-xs font-bold font-headline">Alex Morgan</span>
+<span class="text-[10px] text-on-surface-variant">UK Tax Year 23/24</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-12 py-6 sticky top-0 z-40 bg-[#f9f9fe]/80 backdrop-blur-md">
+<h1 class="text-lg font-black text-[#2c333d] dark:text-slate-100 font-headline uppercase tracking-widest">Settings</h1>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex bg-surface-container-low px-4 py-2 rounded-full items-center gap-2 w-64">
+<span class="material-symbols-outlined text-on-surface-variant text-sm">search</span>
+<input class="bg-transparent border-none text-xs focus:ring-0 w-full font-body" placeholder="Search preferences..." type="text"/>
+</div>
+<div class="flex items-center gap-4 text-on-surface-variant">
+<button class="hover:opacity-80 transition-opacity focus:ring-2 focus:ring-[#007AFF]/20 p-1">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="hover:opacity-80 transition-opacity focus:ring-2 focus:ring-[#007AFF]/20 p-1">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Content Body -->
+<div class="px-12 py-10 max-w-5xl">
+<div class="mb-12">
+<h2 class="text-4xl font-extrabold font-headline text-on-background tracking-tight mb-2">Settings</h2>
+<p class="text-on-surface-variant font-body text-lg">Configure your application preferences and integrations</p>
+</div>
+<div class="grid grid-cols-1 gap-12">
+<!-- Integration Bento Card -->
+<section class="glass-card rounded-[2rem] p-10 border border-white/40 editorial-shadow relative overflow-hidden">
+<!-- Subtle background motif hint -->
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="relative z-10">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-14 h-14 rounded-2xl bg-primary-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+</div>
+<div>
+<h3 class="text-2xl font-bold font-headline">GoCardless Integration</h3>
+<p class="text-on-surface-variant text-sm">Connect your business bank account for automated tax tracking</p>
+</div>
+</div>
+<div class="space-y-8 max-w-2xl">
+<div class="group">
+<label class="block text-[11px] font-bold text-on-surface-variant uppercase tracking-widest mb-3 ml-1">Secret ID</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border-none rounded-xl px-5 py-4 text-sm font-body shadow-sm focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-outline-variant" placeholder="gc_live_XXXXX..." type="text"/>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline-variant text-xl">key</span>
+</div>
+<p class="mt-2 text-[10px] text-on-surface-variant/60 ml-1">Your unique merchant identifier from the GoCardless dashboard.</p>
+</div>
+<div class="group">
+<label class="block text-[11px] font-bold text-on-surface-variant uppercase tracking-widest mb-3 ml-1">Secret Key</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border-none rounded-xl px-5 py-4 text-sm font-body shadow-sm focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-outline-variant" placeholder="••••••••••••••••••••••••" type="password"/>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline-variant text-xl cursor-pointer">visibility</span>
+</div>
+<p class="mt-2 text-[10px] text-on-surface-variant/60 ml-1">Never share this key with anyone. It grants access to your payment flows.</p>
+</div>
+<div class="pt-6 flex items-center justify-between border-t border-surface-variant/30">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="text-xs font-medium text-tertiary">Connection ready for verification</span>
+</div>
+<button class="bg-gradient-to-br from-primary to-primary-dim text-on-primary px-10 py-4 rounded-xl font-bold font-headline text-sm tracking-wide shadow-lg shadow-primary/20 transform active:scale-95 transition-all hover:brightness-110">
+                                    Save Changes
+                                </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Helpful Tip Section -->
+<div class="flex gap-8 items-start opacity-70">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">lightbulb</span>
+</div>
+<div class="max-w-xl">
+<h4 class="font-bold text-sm mb-1">Need help finding your credentials?</h4>
+<p class="text-xs leading-relaxed text-on-surface-variant">Log into your GoCardless dashboard, navigate to Developers &gt; Access Tokens. If you haven't created one yet, click 'Create Token' and ensure you select 'Read Access' for bank transactions.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Sticky Footer Feedback -->
+<footer class="mt-auto px-12 py-8 flex justify-between items-center text-[10px] text-on-surface-variant uppercase tracking-widest font-bold border-t border-surface-container-low">
+<div class="flex gap-8">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">Security Standards</a>
+</div>
+<span>v2.4.0 — Secure UK Node</span>
+</footer>
+</main>
+<!-- Floating Background Element for Depth -->
+<div class="fixed top-0 right-0 -z-10 w-1/3 h-screen bg-gradient-to-l from-surface-container/30 to-transparent pointer-events-none"></div>
+</body></html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tax Reports | Freelancer Tax</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-fixed-dim": "#d5d4d9",
+                        "primary-dim": "#004faa",
+                        "surface-container-high": "#e4e8f3",
+                        "surface-tint": "#005bc1",
+                        "on-background": "#2c333d",
+                        "error-container": "#fe8983",
+                        "surface-variant": "#dce3f0",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#fff8ef",
+                        "primary-fixed-dim": "#c2d4ff",
+                        "on-tertiary-fixed": "#413200",
+                        "surface": "#f9f9fe",
+                        "secondary-container": "#e3e2e7",
+                        "secondary-dim": "#525357",
+                        "error": "#9f403d",
+                        "surface-dim": "#d3dae9",
+                        "primary-container": "#d8e2ff",
+                        "outline-variant": "#acb2bf",
+                        "tertiary-fixed-dim": "#e6c047",
+                        "on-tertiary-container": "#584500",
+                        "on-primary-container": "#004ea8",
+                        "tertiary-fixed": "#f5ce53",
+                        "on-secondary-fixed": "#3e3f43",
+                        "background": "#f9f9fe",
+                        "tertiary-dim": "#665100",
+                        "surface-container-low": "#f2f3fa",
+                        "primary": "#005bc1",
+                        "on-secondary-fixed-variant": "#5b5b60",
+                        "on-surface": "#2c333d",
+                        "on-tertiary-fixed-variant": "#634e00",
+                        "surface-bright": "#f9f9fe",
+                        "surface-container": "#ebeef7",
+                        "error-dim": "#4e0309",
+                        "on-error-container": "#752121",
+                        "inverse-on-surface": "#9c9da1",
+                        "tertiary": "#745c00",
+                        "tertiary-container": "#f5ce53",
+                        "secondary": "#5e5f63",
+                        "on-secondary-container": "#515156",
+                        "on-primary-fixed": "#003d85",
+                        "surface-container-highest": "#dce3f0",
+                        "on-secondary": "#f9f8fe",
+                        "on-primary": "#f7f7ff",
+                        "primary-fixed": "#d8e2ff",
+                        "inverse-surface": "#0c0e12",
+                        "inverse-primary": "#4b8eff",
+                        "outline": "#747b86",
+                        "on-surface-variant": "#595f6a",
+                        "on-primary-fixed-variant": "#0058bb",
+                        "secondary-fixed": "#e3e2e7",
+                        "on-error": "#fff7f6"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #f9f9fe;
+            color: #2c333d;
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- SideNavBar (Shared Component) -->
+<aside class="fixed left-0 top-0 h-full flex flex-col py-8 h-screen w-64 border-r-0 bg-[#f2f3fa] dark:bg-slate-900 z-50">
+<div class="px-8 mb-12">
+<h1 class="text-xl font-bold text-[#2c333d] dark:text-slate-100 font-headline">Freelancer Tax</h1>
+<p class="text-xs font-medium tracking-wide text-on-surface-variant opacity-70">UK Tax Year 2023/24</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-[#2c333d]/70 dark:text-slate-400 hover:bg-[#ffffff]/50 dark:hover:bg-slate-800 transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-sm font-medium tracking-wide">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#2c333d]/70 dark:text-slate-400 hover:bg-[#ffffff]/50 dark:hover:bg-slate-800 transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="text-sm font-medium tracking-wide">Transactions</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#2c333d]/70 dark:text-slate-400 hover:bg-[#ffffff]/50 dark:hover:bg-slate-800 transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+<span class="text-sm font-medium tracking-wide">Categories</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#007AFF] dark:text-blue-400 font-bold border-r-4 border-[#007AFF] bg-[#ffffff]/50 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="assessment" style="font-variation-settings: 'FILL' 1;">assessment</span>
+<span class="text-sm font-medium tracking-wide">Reports</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#2c333d]/70 dark:text-slate-400 hover:bg-[#ffffff]/50 dark:hover:bg-slate-800 transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-sm font-medium tracking-wide">Settings</span>
+</a>
+</nav>
+<div class="px-4 mt-auto">
+<div class="flex items-center gap-3 p-3 rounded-xl bg-surface-container-lowest transition-transform active:scale-95 cursor-pointer shadow-sm">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-bold">
+                    JD
+                </div>
+<div class="flex flex-col">
+<span class="text-sm font-bold">John Doe</span>
+<span class="text-[10px] uppercase tracking-widest opacity-60">Pro Plan</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 min-h-screen">
+<!-- TopAppBar (Shared Component) -->
+<header class="flex justify-between items-center w-full px-8 py-4 sticky top-0 z-40 bg-[#f9f9fe]/80 backdrop-blur-md">
+<div class="flex items-center gap-4">
+<div class="flex flex-col">
+<h2 class="text-lg font-black text-[#2c333d] dark:text-slate-100 font-headline">Tax Reports</h2>
+<p class="text-xs text-on-surface-variant font-medium">MTD quarterly summaries and exports</p>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline text-sm" data-icon="search">search</span>
+</div>
+<input class="block w-64 pl-10 pr-3 py-2 border-0 rounded-full bg-surface-container-lowest text-sm placeholder-on-surface-variant/50 focus:ring-2 focus:ring-[#007AFF]/20 transition-all" placeholder="Search reports..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface hover:opacity-80 transition-opacity p-2 rounded-full focus:ring-2 focus:ring-[#007AFF]/20">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface hover:opacity-80 transition-opacity p-2 rounded-full focus:ring-2 focus:ring-[#007AFF]/20">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<div class="px-8 py-8 space-y-10 max-w-7xl mx-auto">
+<!-- Controls Bar -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div class="inline-flex p-1 bg-surface-container-low rounded-xl">
+<button class="px-6 py-2 rounded-lg text-sm font-semibold transition-all bg-surface-container-lowest text-on-surface shadow-sm">
+                        Tax Year 2026/2027
+                    </button>
+<button class="px-6 py-2 rounded-lg text-sm font-semibold transition-all text-on-surface-variant hover:text-on-surface">
+                        2025/2026
+                    </button>
+</div>
+<button class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-br from-primary to-primary-dim text-on-primary rounded-xl font-semibold shadow-lg hover:opacity-90 transition-all active:scale-95">
+<span class="material-symbols-outlined text-xl" data-icon="ios_share">ios_share</span>
+                    Export MTD JSON
+                </button>
+</div>
+<!-- Hero Bento Section -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Large Stats Card -->
+<div class="md:col-span-2 relative overflow-hidden rounded-3xl bg-surface-container-lowest p-8 min-h-[320px] flex flex-col justify-between group">
+<div class="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors"></div>
+<div class="relative z-10 flex justify-between items-start">
+<div>
+<span class="text-[10px] font-black uppercase tracking-[0.2em] text-primary mb-2 block">Annual Performance</span>
+<h3 class="text-4xl font-extrabold font-headline tracking-tight">Net Profit</h3>
+</div>
+<div class="flex flex-col items-end">
+<div class="px-3 py-1 bg-tertiary-container text-on-tertiary-container rounded-full text-xs font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+                                +12.4% vs LY
+                            </div>
+</div>
+</div>
+<div class="relative z-10">
+<p class="text-6xl font-black font-headline text-on-surface tracking-tighter">£52,480.00</p>
+<div class="mt-8 grid grid-cols-2 gap-8 border-t border-outline-variant/10 pt-8">
+<div class="space-y-1">
+<p class="text-xs font-semibold text-on-surface-variant opacity-60 uppercase tracking-widest">Total Income</p>
+<p class="text-xl font-bold font-headline text-on-surface">£74,120.50</p>
+</div>
+<div class="space-y-1">
+<p class="text-xs font-semibold text-on-surface-variant opacity-60 uppercase tracking-widest">Total Expenses</p>
+<p class="text-xl font-bold font-headline text-error">£21,640.50</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Next Deadline Card -->
+<div class="relative overflow-hidden rounded-3xl bg-inverse-surface p-8 text-on-primary flex flex-col justify-between">
+<div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-primary/20 to-transparent"></div>
+<div class="relative z-10">
+<span class="text-[10px] font-black uppercase tracking-[0.2em] text-primary-fixed mb-2 block">Next Submission</span>
+<h3 class="text-2xl font-extrabold font-headline text-white leading-tight">Q4 MTD Filing</h3>
+</div>
+<div class="relative z-10 space-y-6">
+<div class="flex items-end gap-2">
+<span class="text-5xl font-black font-headline text-white">12</span>
+<span class="text-lg font-bold text-white/60 mb-1">days left</span>
+</div>
+<p class="text-sm text-white/70 leading-relaxed">Your final quarter of the 2026/27 tax year ends on April 5th. All expenses must be categorized.</p>
+<button class="w-full py-3 bg-white text-inverse-surface rounded-xl font-bold text-sm hover:bg-surface-container transition-colors">
+                            Prepare Submission
+                        </button>
+</div>
+</div>
+</div>
+<!-- Quarterly Breakdown Grid -->
+<div>
+<div class="flex items-center justify-between mb-6">
+<h4 class="text-lg font-bold font-headline">Quarterly Breakdown</h4>
+<span class="text-xs font-medium text-on-surface-variant">HM Revenue &amp; Customs Compliant</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Q1 -->
+<div class="glass-card rounded-2xl p-6 border border-white/40 shadow-sm transition-all hover:translate-y-[-4px] hover:shadow-lg">
+<div class="flex justify-between items-center mb-6">
+<span class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-on-surface-variant font-black font-headline text-sm">Q1</span>
+<span class="material-symbols-outlined text-primary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="space-y-4">
+<div>
+<p class="text-[10px] uppercase font-bold tracking-widest text-on-surface-variant opacity-50 mb-1">Profit</p>
+<p class="text-xl font-extrabold font-headline text-on-surface">£14,200</p>
+</div>
+<div class="flex justify-between text-xs font-medium text-on-surface-variant pt-4 border-t border-outline-variant/10">
+<span>Inc: £19k</span>
+<span>Exp: £4.8k</span>
+</div>
+</div>
+</div>
+<!-- Q2 -->
+<div class="glass-card rounded-2xl p-6 border border-white/40 shadow-sm transition-all hover:translate-y-[-4px] hover:shadow-lg">
+<div class="flex justify-between items-center mb-6">
+<span class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-on-surface-variant font-black font-headline text-sm">Q2</span>
+<span class="material-symbols-outlined text-primary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="space-y-4">
+<div>
+<p class="text-[10px] uppercase font-bold tracking-widest text-on-surface-variant opacity-50 mb-1">Profit</p>
+<p class="text-xl font-extrabold font-headline text-on-surface">£11,850</p>
+</div>
+<div class="flex justify-between text-xs font-medium text-on-surface-variant pt-4 border-t border-outline-variant/10">
+<span>Inc: £16k</span>
+<span>Exp: £4.1k</span>
+</div>
+</div>
+</div>
+<!-- Q3 -->
+<div class="glass-card rounded-2xl p-6 border border-white/40 shadow-sm transition-all hover:translate-y-[-4px] hover:shadow-lg">
+<div class="flex justify-between items-center mb-6">
+<span class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-on-surface-variant font-black font-headline text-sm">Q3</span>
+<span class="material-symbols-outlined text-primary" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="space-y-4">
+<div>
+<p class="text-[10px] uppercase font-bold tracking-widest text-on-surface-variant opacity-50 mb-1">Profit</p>
+<p class="text-xl font-extrabold font-headline text-on-surface">£15,430</p>
+</div>
+<div class="flex justify-between text-xs font-medium text-on-surface-variant pt-4 border-t border-outline-variant/10">
+<span>Inc: £21k</span>
+<span>Exp: £5.5k</span>
+</div>
+</div>
+</div>
+<!-- Q4 -->
+<div class="rounded-2xl p-6 border-2 border-dashed border-outline-variant/30 bg-surface-container-low/30 shadow-none transition-all hover:border-primary/40 group">
+<div class="flex justify-between items-center mb-6">
+<span class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-on-surface-variant font-black font-headline text-sm">Q4</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors" data-icon="pending">pending</span>
+</div>
+<div class="space-y-4">
+<div>
+<p class="text-[10px] uppercase font-bold tracking-widest text-on-surface-variant opacity-50 mb-1">Est. Profit</p>
+<p class="text-xl font-extrabold font-headline text-on-surface-variant">£11,000</p>
+</div>
+<div class="flex justify-between text-xs font-medium text-on-surface-variant pt-4 border-t border-outline-variant/10">
+<span>Inc: £18.1k</span>
+<span>Exp: £7.1k</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Tax Estimate & Motif Area -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center pt-4">
+<div class="space-y-6">
+<h4 class="text-lg font-bold font-headline">Tax Liability Projection</h4>
+<div class="space-y-3">
+<div class="flex items-center justify-between p-4 rounded-xl bg-surface-container-low">
+<span class="text-sm font-semibold">Income Tax (Estimated)</span>
+<span class="text-sm font-bold">£8,450.00</span>
+</div>
+<div class="flex items-center justify-between p-4 rounded-xl bg-surface-container-low">
+<span class="text-sm font-semibold">Class 4 NICs</span>
+<span class="text-sm font-bold">£2,120.40</span>
+</div>
+<div class="flex items-center justify-between p-4 rounded-2xl bg-primary-container text-on-primary-container">
+<span class="font-bold">Total Estimated Tax</span>
+<span class="text-lg font-black font-headline">£10,570.40</span>
+</div>
+</div>
+<p class="text-xs text-on-surface-variant/70 italic">*Calculated based on 2026/27 Personal Allowance of £12,570. This is a guideline only.</p>
+</div>
+<!-- Abstract Motif Section (Inspired by IMAGE_8) -->
+<div class="relative h-[280px] rounded-3xl overflow-hidden bg-primary shadow-2xl">
+<div class="absolute inset-0 bg-gradient-to-br from-primary via-primary-dim to-inverse-surface"></div>
+<!-- Motif Geometry -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px]">
+<div class="absolute inset-0 border-[40px] border-white/5 rounded-full rotate-45 scale-110"></div>
+<div class="absolute inset-10 border-[20px] border-white/10 rounded-full -rotate-12"></div>
+<div class="absolute inset-20 bg-gradient-to-tr from-white/10 to-transparent rounded-full blur-xl"></div>
+</div>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center p-8 z-10">
+<span class="material-symbols-outlined text-white text-5xl mb-4" data-icon="account_balance_wallet" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+<h5 class="text-white text-xl font-bold font-headline mb-2">Smart Tax Planning</h5>
+<p class="text-white/70 text-sm max-w-[240px]">We've automatically set aside 20% of your net income for tax. You're covered.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

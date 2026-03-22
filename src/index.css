@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #f9f9fe;
+    color: #2c333d;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Manrope', 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .editorial-shadow {
+    box-shadow: 0 10px 40px -10px rgba(44, 51, 61, 0.04);
+  }
+
+  .btn {
+    @apply px-5 py-2.5 rounded-xl text-sm font-semibold transition-all inline-flex items-center gap-2;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #005bc1, #004faa);
+    color: #f7f7ff;
+    box-shadow: 0 10px 15px -3px rgba(0, 91, 193, 0.2);
+  }
+  .btn-primary:hover {
+    opacity: 0.9;
+  }
+  .btn-primary:active {
+    transform: scale(0.95);
+  }
+
+  .btn-secondary {
+    background-color: #dce3f0;
+    color: #004ea8;
+  }
+  .btn-secondary:hover {
+    background-color: #e4e8f3;
+  }
+
+  .btn-ghost {
+    color: #005bc1;
+  }
+  .btn-ghost:hover {
+    background-color: rgba(0, 91, 193, 0.05);
+  }
+
+  .input {
+    @apply w-full border-none rounded-xl px-5 py-4 text-sm shadow-sm transition-all outline-none;
+    background-color: #ffffff;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  .input::placeholder {
+    color: #acb2bf;
+  }
+  .input:focus {
+    box-shadow: 0 0 0 2px rgba(0, 91, 193, 0.2);
+  }
+
+  .card {
+    background-color: #ffffff;
+    @apply rounded-2xl;
+  }
+}
