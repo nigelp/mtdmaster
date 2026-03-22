@@ -1,6 +1,6 @@
 {
   "name": "mtd-master",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "MTD Master - Secure UK Making Tax Digital bookkeeping application",
   "main": "dist-electron/main.js",
   "author": "MTD Master",
@@ -88,7 +88,7 @@
         "nsis",
         "portable"
       ],
-      "icon": "public/favicon.ico"
+      "icon": "public/icon-512x512.png"
     },
     "nsis": {
       "oneClick": false,
