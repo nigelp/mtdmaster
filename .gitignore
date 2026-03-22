@@ -88,3 +88,6 @@ coverage/
 
 # Electron
 *.blockmap
+
+# Deprecated assets
+pwa-icons-6090f2ddGreenNice.zip
