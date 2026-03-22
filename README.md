@@ -75,17 +75,16 @@ See [plan.md](plan.md) for the complete implementation plan.
 
 ### Phase 1: Foundation (Current)
 - [x] Project setup
-- [x] Basic UI shell
-- [x] Master password/unlock screen
-- [ ] Database encryption
-- [ ] Security layer
+- [x] Styled UI
+- [x] Transaction management
+- [x] Categorization engine
+- [x] Electron .exe and .exe setup builds
 
-### Phase 2-6: Coming Soon
-- Banking integration (GoCardless)
-- Transaction management
-- Categorization engine
+### Phase 2-4: Coming Soon
+- Open Banking integration
 - Tax calculations
 - Reports & MTD export
+- Credit card inputs and processing (digital)
 
 ## 🧪 Testing
 
